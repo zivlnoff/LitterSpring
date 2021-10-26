@@ -1,16 +1,16 @@
-package cn.bugstack.springframework;
+package cn.bugstack.springframework.config;
 
 /*
 * 用于定义Bean实例化信息
 * */
 public class BeanDefinition {
-    private Object bean;
+    private Class bean;
 
-    public BeanDefinition(Object bean) {
+    public BeanDefinition(Class bean) {
         this.bean = bean;
     }
 
-    public Object getBean() {
+    public Class getBean() {
         return bean;
     }
 }
