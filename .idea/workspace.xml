@@ -24,11 +24,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="实现构造函数入参可变。">
+    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="新增构造Object对象策略模式。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635336740222</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="新增构造Object对象策略模式。">
+      <created>1635346354062</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635346354062</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +258,8 @@
     <MESSAGE value="重新进行了整体设计，清晰可扩展。" />
     <MESSAGE value="上一个未提交全，想从分支中删掉那个节点，失败了。" />
     <MESSAGE value="实现构造函数入参可变。" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现构造函数入参可变。" />
+    <MESSAGE value="新增构造Object对象策略模式。" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增构造Object对象策略模式。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1194" y="68" key="#Auto_Import" timestamp="1635324315880">
@@ -298,32 +306,32 @@
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1121" y="31" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635306223719" />
-    <state width="1398" height="247" key="GridCell.Tab.0.bottom" timestamp="1635345990455">
+    <state width="1398" height="247" key="GridCell.Tab.0.bottom" timestamp="1635346354997">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="939" height="307" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635336758579" />
-    <state width="1398" height="247" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1635345990455" />
+    <state width="1398" height="247" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1635346354997" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.25.1440.803@0.25.1440.803" timestamp="1635265999133" />
     <state width="1878" height="307" key="GridCell.Tab.0.bottom/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403204" />
-    <state width="1398" height="247" key="GridCell.Tab.0.center" timestamp="1635345990453">
+    <state width="1398" height="247" key="GridCell.Tab.0.center" timestamp="1635346354996">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="939" height="307" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635336758578" />
-    <state width="1398" height="247" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1635345990453" />
+    <state width="1398" height="247" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1635346354996" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.25.1440.803@0.25.1440.803" timestamp="1635265999132" />
     <state width="1878" height="307" key="GridCell.Tab.0.center/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403200" />
-    <state width="1398" height="247" key="GridCell.Tab.0.left" timestamp="1635345990452">
+    <state width="1398" height="247" key="GridCell.Tab.0.left" timestamp="1635346354996">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="939" height="307" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635336758577" />
-    <state width="1398" height="247" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1635345990452" />
+    <state width="1398" height="247" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1635346354996" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.25.1440.803@0.25.1440.803" timestamp="1635265999131" />
     <state width="1878" height="307" key="GridCell.Tab.0.left/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403199" />
-    <state width="1398" height="247" key="GridCell.Tab.0.right" timestamp="1635345990454">
+    <state width="1398" height="247" key="GridCell.Tab.0.right" timestamp="1635346354997">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="939" height="307" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635336758578" />
-    <state width="1398" height="247" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1635345990454" />
+    <state width="1398" height="247" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1635346354997" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.25.1440.803@0.25.1440.803" timestamp="1635265999132" />
     <state width="1878" height="307" key="GridCell.Tab.0.right/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403203" />
     <state x="-1422" y="19" key="Maven.ArtifactSearchDialog" timestamp="1635242441455">
@@ -335,11 +343,11 @@
     </state>
     <state x="-1472" y="-62" key="SettingsEditor/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635306344796" />
     <state x="-1472" y="-70" key="SettingsEditor/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246936482" />
-    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2" timestamp="1635334840176">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state x="420" y="231" key="Vcs.Push.Dialog.v2" timestamp="1635346367015">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635334840176" />
-    <state x="420" y="231" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1635264078651" />
+    <state x="420" y="231" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1635346367015" />
     <state x="-1360" y="79" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246949929" />
     <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635243860398" />
     <state x="-1205" y="77" key="git4idea.branch.GitSmartOperationDialog" timestamp="1635336955889">
