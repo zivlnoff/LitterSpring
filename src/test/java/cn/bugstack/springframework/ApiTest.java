@@ -1,12 +1,9 @@
 package cn.bugstack.springframework;
 
 import cn.bugstack.springframework.bean.UserService;
-import cn.bugstack.springframework.config.BeanDefinition;
-import cn.bugstack.springframework.support.DefaultListableBeanFactory;
-import cn.bugstack.springframework.support.DefaultSingletonBeanRegister;
+import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
+import cn.bugstack.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.junit.Test;
-
-import java.lang.reflect.InvocationTargetException;
 
 public class ApiTest {
     @Test
@@ -15,8 +12,8 @@ public class ApiTest {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
         //注册bean
-//        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
-        beanFactory.register("userService", UserService.class);
+        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
+        beanFactory.beanDefinitionRegistry("userService",beanDefinition);
 
         //第一次获取bean
         UserService userService1 = (UserService) beanFactory.getBean("userService");

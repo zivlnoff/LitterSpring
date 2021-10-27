@@ -1,4 +1,4 @@
-package cn.bugstack.springframework.config;
+package cn.bugstack.springframework.beans.factory.config;
 
 /*
 * 用于定义Bean实例化信息
@@ -10,7 +10,7 @@ public class BeanDefinition {
         this.bean = bean;
     }
 
-    public Class getBean() {
+    public Class getBeanClass() {
         return bean;
     }
 }

@@ -1,8 +1,9 @@
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/support/SingleObjectRegister.java
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/support/DefaultAutowireCapableBeanFactory.java
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/support/AbstractAutowireCapableBeanFactory.java
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/config/BeanDefinition.java
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/support/AbstractBeanFactory.java
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/support/DefaultSingletonBeanRegister.java
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/BeanFactory.java
-/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/support/DefaultListableBeanFactory.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultListableBeanFactory.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/BeansException.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/support/BeanDefinitionRegistry.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/BeanFactory.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/config/BeanDefinition.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.java
+/Users/alsc/Desktop/mySp/src/main/java/cn/bugstack/springframework/beans/factory/config/SingletonBeanRegistry.java
