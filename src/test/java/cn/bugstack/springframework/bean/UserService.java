@@ -4,10 +4,14 @@ package cn.bugstack.springframework.bean;
 import org.junit.Test;
 
 public class UserService {
+    private String msg;
+
+    public UserService(String msg){
+        this.msg = msg;
+    }
 
     @Test
     public void queryUserInfo(){
-        System.out.println("查询信息");
+        System.out.println(msg);
     }
-
 }

@@ -1,9 +1,9 @@
 cn/bugstack/springframework/beans/factory/support/BeanDefinitionRegistry.class
 cn/bugstack/springframework/beans/factory/support/DefaultListableBeanFactory.class
 cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class
+cn/bugstack/springframework/beans/factory/config/SingletonBeanRegistry.class
+cn/bugstack/springframework/beans/factory/BeanFactory.class
 cn/bugstack/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class
 cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.class
-cn/bugstack/springframework/beans/factory/config/SingletonBeanRegistry.class
 cn/bugstack/springframework/beans/factory/config/BeanDefinition.class
-cn/bugstack/springframework/beans/factory/BeanFactory.class
 cn/bugstack/springframework/beans/BeansException.class
