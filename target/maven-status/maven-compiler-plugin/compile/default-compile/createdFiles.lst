@@ -1,0 +1,8 @@
+cn/bugstack/springframework/support/DefaultAutowireCapableBeanFactory.class
+cn/bugstack/springframework/BeanFactory.class
+cn/bugstack/springframework/config/BeanDefinition.class
+cn/bugstack/springframework/support/DefaultListableBeanFactory.class
+cn/bugstack/springframework/support/SingleObjectRegister.class
+cn/bugstack/springframework/support/AbstractBeanFactory.class
+cn/bugstack/springframework/support/AbstractAutowireCapableBeanFactory.class
+cn/bugstack/springframework/support/DefaultSingletonBeanRegister.class
