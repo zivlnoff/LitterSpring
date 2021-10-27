@@ -6,6 +6,7 @@ import org.junit.Test;
 public class UserService {
     private String msg;
 
+    public UserService() {}
     public UserService(String msg){
         this.msg = msg;
     }
