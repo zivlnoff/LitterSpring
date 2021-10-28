@@ -16,28 +16,19 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Properties {
     private List<Property> properties = new ArrayList<>();
 
-    public void addPropertyValue(String name, Object propertyValue){
-        properties.add(new Property(name, propertyValue.getClass(), propertyValue));
+    public void addPropertyValue(String name, Object propertyValue) {
+        properties.add(new Property(name, propertyValue));
     }
 
-    public List<Property> getPropertiesList(){
+    public List<Property> getPropertiesList() {
         return properties;
-        //传list还是array好呢？
     }
 
-    public Object[] getPropertiesObject(){
+    public Object[] getPropertiesObject() {
         Object[] propertiesObject = new Object[properties.size()];
-        for(int i = 0; i<propertiesObject.length; i++){
+        for (int i = 0; i < propertiesObject.length; i++) {
             propertiesObject[i] = properties.get(i).getValue();
         }
         return propertiesObject;
-    }
-
-    public Class[] getPropertiesClass(){
-        Class[] classes = new Class[properties.size()];
-        for(int i = 0; i<properties.size(); i++){
-            classes[i] = properties.get(i).getClazz();
-        }
-        return classes;
     }
 }

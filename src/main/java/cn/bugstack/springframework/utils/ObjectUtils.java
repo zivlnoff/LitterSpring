@@ -9,6 +9,7 @@ public class ObjectUtils {
     public static void SetFieldValue(Object object, BeanDefinition bean, String fieldName, Object value){
         Class beanClass = bean.getBeanClass();
         Field field = null;
+
         try {
             field = beanClass.getDeclaredField(fieldName);
             field.setAccessible(true);

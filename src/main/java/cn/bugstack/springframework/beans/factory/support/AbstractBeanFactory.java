@@ -6,23 +6,20 @@ import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import sun.swing.BeanInfoUtils;
 
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
-    abstract protected Object createBeanObject(String name, BeanDefinition beanDefinition, Object... objects) throws BeansException;
+    abstract protected Object createBeanObject(String name, BeanDefinition beanDefinition) throws BeansException;
 
     abstract protected BeanDefinition getBeanDefinition(String name);
 
-    //只能在构造函数入参注入和BeanDefinition注入二选一
     @Override
-    public Object getBean(String name, Object... objects) {
+    public Object getBean(String name) {
         Object object = getSingleton(name);
         if (object != null) {
             return object;
         }
 
         BeanDefinition beanDefinition = getBeanDefinition(name);
-        object = createBeanObject(name, beanDefinition, objects);
+        object = createBeanObject(name, beanDefinition);
 
-        //习惯了在一个方法中写create & add方法， 但create方法实际并不是在这个类中完成的（这样描述可能表达不了我的意思），但应该将add放在真正创建的后面（如果不需要延时载入的话）。
-//        addSingleton(name, object);
         return object;
     }
 }

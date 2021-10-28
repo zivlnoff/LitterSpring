@@ -4,25 +4,26 @@ package cn.bugstack.springframework.beans.factory.config;
 import cn.bugstack.springframework.beans.Properties;
 
 /*
-* 用于定义Bean实例化信息
-* */
+ * 用于定义Bean实例化信息
+ * */
 public class BeanDefinition {
-    private Class bean;
+    private Class beanClass;
     private Properties properties;
 
     public BeanDefinition(Class bean) {
-        this.bean = bean;
+        this.beanClass = bean;
     }
-    public BeanDefinition(Class bean, Properties properties){
-        this.bean = bean;
+
+    public BeanDefinition(Class beanClass, Properties properties) {
+        this.beanClass = beanClass;
         this.properties = properties;
     }
 
     public Class getBeanClass() {
-        return bean;
+        return beanClass;
     }
 
-    public Properties getBeanDefinitionProperties(){
+    public Properties getBeanDefinitionProperties() {
         return properties;
     }
 }

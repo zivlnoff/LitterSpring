@@ -2,6 +2,7 @@ package cn.bugstack.springframework;
 
 import cn.bugstack.springframework.bean.UserDao;
 import cn.bugstack.springframework.bean.UserService;
+import cn.bugstack.springframework.beans.BeanReference;
 import cn.bugstack.springframework.beans.Properties;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -20,7 +21,7 @@ public class ApiTest {
         //UserService 注入属性设置
         Properties properties = new Properties();
         properties.addPropertyValue("signal", "1");
-        properties.addPropertyValue("userDao", beanFactory.getBean("userDao"));
+        properties.addPropertyValue("userDao", new BeanReference("userDao"));
 
         //UserService 注入 bean
         BeanDefinition beanDefinition = new BeanDefinition(UserService.class, properties);

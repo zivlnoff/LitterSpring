@@ -24,11 +24,43 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="新增构造Object对象策略模式,上一个未commit全。">
+    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="bug，无法乱序注册且无object生成，导致在资源配置的时候出问题，重构。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/AbstractBeanDefinitionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/Properties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/Properties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/utils/ObjectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/utils/ObjectUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/SimpleInitiationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/SimpleInitiationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Center.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Center.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/ClassPathResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/ClassPathResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/FileSystemResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/FileSystemResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/UrlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/config/UrlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/AbstractBeanDefinitionLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/BeanDefinitionReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/DefaultResourceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/DefaultResourceLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/ResourceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/ResourceLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/XmlBeanDefinitionLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/utils/ObjectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/utils/ObjectUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/LittleSpring.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/Properties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/Properties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/Property.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/BeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/BeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/config/BeanDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/config/BeanDefinition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/SimpleInitiationStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/support/SimpleInitiationStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/utils/ObjectUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635402756950</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="添加资源配置功能整体设计。">
+      <created>1635409820497</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1635409820497</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,7 +321,8 @@
     <MESSAGE value="新增构造Object对象策略模式。" />
     <MESSAGE value="新增构造Object对象策略模式,上一个未commit全。" />
     <MESSAGE value="进一步实现属性注入（也是通过构造函数），但更灵活，没有办法跳过构造函数，因为假设不一定有空参构造函数，就不一定能new对象出来。要留意在调用的时候产生过多依赖（依赖类成员，依赖类方法）。以及入参出参的限定条件。即要满足里式替换原则。" />
-    <option name="LAST_COMMIT_MESSAGE" value="进一步实现属性注入（也是通过构造函数），但更灵活，没有办法跳过构造函数，因为假设不一定有空参构造函数，就不一定能new对象出来。要留意在调用的时候产生过多依赖（依赖类成员，依赖类方法）。以及入参出参的限定条件。即要满足里式替换原则。" />
+    <MESSAGE value="添加资源配置功能整体设计。" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加资源配置功能整体设计。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1194" y="68" key="#Auto_Import" timestamp="1635324315880">
@@ -299,11 +339,11 @@
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1496" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635305910715" />
-    <state x="-1147" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1635399238189">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state x="580" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1635436438443">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="-1147" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635399238189" />
-    <state x="580" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1635345047142" />
+    <state x="-1147" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635423093320" />
+    <state x="580" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1635436438443" />
     <state x="-1147" y="63" key="#com.intellij.ide.util.MemberChooser/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635240796673" />
     <state x="458" y="230" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1635261643902">
       <screen x="0" y="0" width="1440" height="900" />
@@ -322,74 +362,82 @@
     </state>
     <state x="-1256" y="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635408619751" />
     <state x="498" y="335" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.900@0.0.1440.900" timestamp="1635260853098" />
-    <state x="-1222" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1635325018501">
+    <state x="-1222" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1635421102163">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1222" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635325018501" />
+    <state x="-1222" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635421102163" />
     <state x="-1121" y="31" key="EnvironmentVariablesDialog" timestamp="1635306223719">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1121" y="31" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635306223719" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1635405847982">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1635437673698">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635405847982" />
-    <state width="1398" height="247" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1635349281603" />
+    <state width="1878" height="376" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419949" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1635437673698" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.25.1440.803@0.25.1440.803" timestamp="1635265999133" />
     <state width="1878" height="307" key="GridCell.Tab.0.bottom/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403204" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1635405847980">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1635437673697">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635405847980" />
-    <state width="1398" height="247" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1635349281602" />
+    <state width="1878" height="376" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419948" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1635437673697" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.25.1440.803@0.25.1440.803" timestamp="1635265999132" />
     <state width="1878" height="307" key="GridCell.Tab.0.center/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403200" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1635405847978">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1635437673696">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635405847978" />
-    <state width="1398" height="247" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1635349281601" />
+    <state width="1878" height="376" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419947" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1635437673696" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.25.1440.803@0.25.1440.803" timestamp="1635265999131" />
     <state width="1878" height="307" key="GridCell.Tab.0.left/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403199" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1635405847981">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1635437673698">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635405847981" />
-    <state width="1398" height="247" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1635349281602" />
+    <state width="1878" height="376" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419949" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1635437673698" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.25.1440.803@0.25.1440.803" timestamp="1635265999132" />
     <state width="1878" height="307" key="GridCell.Tab.0.right/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403203" />
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1635402137221">
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1635437598529">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419951" />
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1635437598529" />
+    <state width="1398" height="304" key="GridCell.Tab.1.center" timestamp="1635437598528">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419950" />
+    <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1635437598528" />
+    <state width="1398" height="304" key="GridCell.Tab.1.left" timestamp="1635437598527">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419950" />
+    <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1635437598527" />
+    <state width="1398" height="304" key="GridCell.Tab.1.right" timestamp="1635437598528">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635426419951" />
+    <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1635437598528" />
+    <state x="-1422" y="19" key="Maven.ArtifactSearchDialog" timestamp="1635422122747">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635402137221" />
-    <state width="1878" height="376" key="GridCell.Tab.1.center" timestamp="1635402137219">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635402137219" />
-    <state width="1878" height="376" key="GridCell.Tab.1.left" timestamp="1635402137218">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635402137218" />
-    <state width="1878" height="376" key="GridCell.Tab.1.right" timestamp="1635402137220">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635402137220" />
-    <state x="-1422" y="19" key="Maven.ArtifactSearchDialog" timestamp="1635242441455">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
-    </state>
-    <state x="-1422" y="19" key="Maven.ArtifactSearchDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635242441455" />
+    <state x="-1422" y="19" key="Maven.ArtifactSearchDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635422122747" />
     <state x="-1472" y="-62" key="SettingsEditor" timestamp="1635306344796">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1472" y="-62" key="SettingsEditor/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635306344796" />
     <state x="-1472" y="-70" key="SettingsEditor/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246936482" />
-    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2" timestamp="1635402848397">
+    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2" timestamp="1635409989864">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635402774926" />
+    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635409989864" />
     <state x="420" y="231" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1635349250662" />
     <state x="-1360" y="79" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246949929" />
     <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635402848397" />
+    <state x="13" y="10" width="1427" height="840" maximized="true" key="dock-window-1" timestamp="1635419544117">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="13" y="10" width="1427" height="840" maximized="true" key="dock-window-1/0.25.1440.875/-1920.-155.1920.977@-1920.-155.1920.977" timestamp="1635419544117" />
     <state x="-1205" y="77" key="git4idea.branch.GitSmartOperationDialog" timestamp="1635336955889">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
@@ -406,11 +454,11 @@
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1295" y="165" key="run.anything.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635247248248" />
-    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup" timestamp="1635409455407">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup" timestamp="1635436040700">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635409455407" />
-    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1635345646228" />
+    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635423068516" />
+    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1635436040700" />
     <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.25.1440.803@0.25.1440.803" timestamp="1635344970032" />
     <state x="-1295" y="45" width="670" height="631" key="search.everywhere.popup/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246905618" />
   </component>
@@ -418,34 +466,34 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/utils/ObjectUtils.java</url>
           <line>14</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/SimpleInitiationStrategy.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

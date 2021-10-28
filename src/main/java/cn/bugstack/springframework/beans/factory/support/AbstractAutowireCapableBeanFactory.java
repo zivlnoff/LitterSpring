@@ -1,6 +1,8 @@
 package cn.bugstack.springframework.beans.factory.support;
 
+import cn.bugstack.springframework.beans.BeanReference;
 import cn.bugstack.springframework.beans.BeansException;
+import cn.bugstack.springframework.beans.Properties;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory {
@@ -8,18 +10,30 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
     //新修改必须在修改已有代码和扩展中做权衡
     @Override
-    protected Object createBeanObject(String name, BeanDefinition beanDefinition, Object... objects) throws BeansException {
+    protected Object createBeanObject(String name, BeanDefinition beanDefinition) throws BeansException {
         Object object;
-        if(beanDefinition.getBeanDefinitionProperties() == null || objects.length != 0) {
-            object = initiationStrategy.initialMethod(beanDefinition, objects);
-            addSingleton(name, object);
-            System.out.println("单例创建");
+
+        Properties properties = beanDefinition.getBeanDefinitionProperties();
+        if(properties != null) {
+            Object[] objects = beanDefinition.getBeanDefinitionProperties().getPropertiesObject();
+            Object[] arguments = new Object[objects.length];
+
+            for (int i = 0; i < arguments.length; i++) {
+                if (objects[i] instanceof BeanReference) {
+                    arguments[i] = getBean(((BeanReference) objects[i]).getName());
+                } else {
+                    arguments[i] = objects[i];
+                }
+            }
+            object = initiationStrategy.initialMethod(beanDefinition, arguments);
         }
         else{
-            //多加了一个参数，哭了，找bug
-//            object = getBean(name, beanDefinition, beanDefinition.getBeanDefinitionProperties().getPropertiesObject());
-            object = getBean(name, beanDefinition.getBeanDefinitionProperties().getPropertiesObject());
+            object = initiationStrategy.initialMethod(beanDefinition);
         }
+
+        addSingleton(name, object);
+        System.out.println("单例创建");
+
         return object;
     }
 }

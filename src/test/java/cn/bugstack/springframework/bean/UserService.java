@@ -11,7 +11,7 @@ public class UserService {
     public UserService(String signal){
         this.signal = signal;
     }
-    public UserService(String signal, UserDao userDao) {this.signal = signal; this.userDao = userDao;}
+    private UserService(String signal, UserDao userDao) {this.signal = signal; this.userDao = userDao;}
 
 
     @Test
