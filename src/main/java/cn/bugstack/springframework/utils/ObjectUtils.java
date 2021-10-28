@@ -1,4 +1,4 @@
-package cn.bugstack.springframework.beans.factory.utils;
+package cn.bugstack.springframework.utils;
 
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 

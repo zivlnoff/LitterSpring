@@ -1,12 +1,7 @@
 package cn.bugstack.springframework.beans.factory.support;
 
 import cn.bugstack.springframework.beans.BeansException;
-import cn.bugstack.springframework.beans.Properties;
-import cn.bugstack.springframework.beans.Property;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
-import cn.bugstack.springframework.beans.factory.utils.ObjectUtils;
-
-import java.util.Map;
 
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory {
     private InitiationStrategy initiationStrategy = new SimpleInitiationStrategy();

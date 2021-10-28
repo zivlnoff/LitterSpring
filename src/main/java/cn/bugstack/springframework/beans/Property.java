@@ -1,7 +1,5 @@
 package cn.bugstack.springframework.beans;
 
-import cn.bugstack.springframework.beans.factory.utils.ObjectUtils;
-
 public class Property {
     private String name;
     private Class clazz;
