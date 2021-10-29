@@ -1,4 +1,4 @@
-package cn.bugstack.springframework.beans.resolver.service;
+package cn.bugstack.springframework.beans.interaction.support;
 
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.resolver.config.Resource;

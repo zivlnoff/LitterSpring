@@ -1,9 +1,10 @@
-package cn.bugstack.springframework.beans.resolver.service;
+package cn.bugstack.springframework.beans.interaction.support;
 
-import cn.bugstack.springframework.beans.BeanReference;
-import cn.bugstack.springframework.beans.Property;
+import cn.bugstack.springframework.beans.factory.config.BeanReference;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
+import cn.bugstack.springframework.beans.interaction.support.AbstractBeanDefinitionReader;
 import cn.bugstack.springframework.beans.resolver.config.Resource;
+import cn.bugstack.springframework.beans.resolver.service.ResourceLoader;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.XmlUtil;
 import org.w3c.dom.Document;
@@ -12,8 +13,6 @@ import org.w3c.dom.NodeList;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

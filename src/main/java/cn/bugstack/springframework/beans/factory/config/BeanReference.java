@@ -1,4 +1,4 @@
-package cn.bugstack.springframework.beans;
+package cn.bugstack.springframework.beans.factory.config;
 
 public class BeanReference {
     private String name;

@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserDao {
-    private static Map<String, String> map = new HashMap<>();
+    private static Map<String, String> hashMap = new HashMap<>();
 
     static {
-        map.put("1", "开始");
-        map.put("2", "暂停");
-        map.put("3", "结束");
+        hashMap.put("10001", "小傅哥");
+        hashMap.put("10002", "八杯水");
+        hashMap.put("10003", "阿毛");
     }
 
-    public String getStatus(String signal){
-        return map.get(signal);
+    public String queryUserName(String uId) {
+        return hashMap.get(uId);
     }
 }

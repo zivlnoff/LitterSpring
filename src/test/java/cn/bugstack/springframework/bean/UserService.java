@@ -4,18 +4,44 @@ package cn.bugstack.springframework.bean;
 import org.junit.Test;
 
 public class UserService {
-    private String signal;
+    private String uId;
+    private String company;
+    private String location;
     private UserDao userDao;
 
-    public UserService() {}
-    public UserService(String signal){
-        this.signal = signal;
+    public String queryUserInfo() {
+        return userDao.queryUserName(uId) + "," + company + "," + location;
     }
-    private UserService(String signal, UserDao userDao) {this.signal = signal; this.userDao = userDao;}
 
+    public String getuId() {
+        return uId;
+    }
 
-    @Test
-    public String queryUserInfo(){
-        return userDao.getStatus(signal);
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public UserDao getUserDao() {
+        return userDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 }

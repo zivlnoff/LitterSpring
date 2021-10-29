@@ -2,11 +2,10 @@ package cn.bugstack.springframework.beans.interaction;
 
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.factory.support.BeanDefinitionRegistry;
-import cn.bugstack.springframework.beans.resolver.service.AbstractBeanDefinitionReader;
+import cn.bugstack.springframework.beans.interaction.support.AbstractBeanDefinitionReader;
 import com.sun.tools.javac.util.Assert;
 
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Center {
     private BeanDefinitionRegistry beanFactory;

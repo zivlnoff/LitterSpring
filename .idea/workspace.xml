@@ -24,21 +24,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="bug，无法乱序注册，无法get时候一次性生成，导致在资源配置的时候出问题，重构完成。现只支持先注册后get，似乎就是这么个需求？加入参get很简单但没必要。">
+    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="资源解析功能发布。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/BeanReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/BeanReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Center.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Center.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/AbstractBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/AbstractBeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/AbstractBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/support/AbstractBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/resolver/service/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/support/XmlBeanDefinitionReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/config/BeanDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/factory/config/BeanDefinition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/interaction/Center.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/interaction/Center.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/resolver/service/AbstractBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/resolver/service/AbstractBeanDefinitionReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/resolver/service/XmlBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/resolver/service/XmlBeanDefinitionReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635437878290</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="资源解析功能发布。">
+      <created>1635489020047</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1635489020047</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,7 +363,8 @@
     <MESSAGE value="进一步实现属性注入（也是通过构造函数），但更灵活，没有办法跳过构造函数，因为假设不一定有空参构造函数，就不一定能new对象出来。要留意在调用的时候产生过多依赖（依赖类成员，依赖类方法）。以及入参出参的限定条件。即要满足里式替换原则。" />
     <MESSAGE value="添加资源配置功能整体设计。" />
     <MESSAGE value="bug，无法乱序注册，无法get时候一次性生成，导致在资源配置的时候出问题，重构完成。现只支持先注册后get，似乎就是这么个需求？加入参get很简单但没必要。" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug，无法乱序注册，无法get时候一次性生成，导致在资源配置的时候出问题，重构完成。现只支持先注册后get，似乎就是这么个需求？加入参get很简单但没必要。" />
+    <MESSAGE value="资源解析功能发布。" />
+    <option name="LAST_COMMIT_MESSAGE" value="资源解析功能发布。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1194" y="68" key="#Auto_Import" timestamp="1635324315880">
@@ -469,11 +473,11 @@
     </state>
     <state x="-1472" y="-62" key="SettingsEditor/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635480164764" />
     <state x="-1472" y="-70" key="SettingsEditor/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246936482" />
-    <state x="420" y="231" key="Vcs.Push.Dialog.v2" timestamp="1635437909562">
+    <state x="420" y="231" key="Vcs.Push.Dialog.v2" timestamp="1635489132175">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635409989864" />
-    <state x="420" y="231" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1635437909562" />
+    <state x="420" y="231" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1635489132175" />
     <state x="-1360" y="79" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246949929" />
     <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635402848397" />
     <state width="960" height="540" key="XDebugger.FullValuePopup" timestamp="1635485507792">
@@ -500,11 +504,11 @@
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1295" y="165" key="run.anything.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635247248248" />
-    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup" timestamp="1635480149714">
+    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup" timestamp="1635510212657">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635480149714" />
-    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1635436040700" />
+    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635510212657" />
+    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1635489044748" />
     <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.25.1440.803@0.25.1440.803" timestamp="1635344970032" />
     <state x="-1295" y="45" width="670" height="631" key="search.everywhere.popup/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246905618" />
   </component>
@@ -513,17 +517,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>49</line>
+          <line>46</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>46</line>
+          <line>43</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>55</line>
+          <line>52</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -538,12 +542,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>90</line>
+          <line>87</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>93</line>
+          <line>90</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

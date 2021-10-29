@@ -2,25 +2,22 @@ package cn.bugstack.springframework;
 
 import cn.bugstack.springframework.bean.UserDao;
 import cn.bugstack.springframework.bean.UserService;
-import cn.bugstack.springframework.beans.BeanReference;
+import cn.bugstack.springframework.beans.factory.config.BeanReference;
 import cn.bugstack.springframework.beans.Properties;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.factory.support.BeanDefinitionRegistry;
 import cn.bugstack.springframework.beans.factory.support.DefaultListableBeanFactory;
 import cn.bugstack.springframework.beans.interaction.Center;
-import cn.bugstack.springframework.beans.resolver.config.ClassPathResource;
 import cn.bugstack.springframework.beans.resolver.config.Resource;
 import cn.bugstack.springframework.beans.resolver.service.DefaultResourceLoader;
 import cn.bugstack.springframework.beans.resolver.service.ResourceLoader;
-import cn.bugstack.springframework.beans.resolver.service.XmlBeanDefinitionReader;
+import cn.bugstack.springframework.beans.interaction.support.XmlBeanDefinitionReader;
 import cn.hutool.core.io.IoUtil;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -95,7 +92,7 @@ public class ApiTest {
     }
 
     @Test
-    public void test_xml() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void test_xml1() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         center.loadResource("classpath:spring.xml");
 
         Class clazz = DefaultListableBeanFactory.class;
@@ -107,5 +104,40 @@ public class ApiTest {
         //check
         String result = userService.queryUserInfo();
         System.out.println(result);
+    }
+
+    //bean干预测试
+    @Test
+    public void test_BeanFactoryPostProcessorAndBeanPostProcessor(){
+        // 1.初始化 BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        // 2. 读取配置文件&注册Bean
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        center.loadResource("classpath:spring.xml");
+
+        // 3. BeanDefinition 加载完成 & Bean实例化之前，修改 BeanDefinition 的属性值
+        MyBeanFactoryPostProcessor beanFactoryPostProcessor = new MyBeanFactoryPostProcessor();
+        beanFactoryPostProcessor.postProcessBeanFactory(beanFactory);
+
+        // 4. Bean实例化之后，修改 Bean 属性信息
+        MyBeanPostProcessor beanPostProcessor = new MyBeanPostProcessor();
+        beanFactory.addBeanPostProcessor(beanPostProcessor);
+
+        // 5. 获取Bean对象调用方法
+        UserService userService = beanFactory.getBean("userService", UserService.class);
+        String result = userService.queryUserInfo();
+        System.out.println("测试结果：" + result);
+    }
+
+    @Test
+    public void test_xml2() {
+        // 1.初始化 BeanFactory
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:springPostProcessor.xml");
+
+        // 2. 获取Bean对象调用方法
+        UserService userService = applicationContext.getBean("userService", UserService.class);
+        String result = userService.queryUserInfo();
+        System.out.println("测试结果：" + result);
     }
 }

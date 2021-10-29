@@ -1,6 +1,6 @@
 package cn.bugstack.springframework.beans.factory.support;
 
-import cn.bugstack.springframework.beans.BeanReference;
+import cn.bugstack.springframework.beans.factory.config.BeanReference;
 import cn.bugstack.springframework.beans.BeansException;
 import cn.bugstack.springframework.beans.Properties;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
