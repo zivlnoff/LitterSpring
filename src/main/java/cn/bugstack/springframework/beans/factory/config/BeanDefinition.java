@@ -10,8 +10,8 @@ public class BeanDefinition {
     private Class beanClass;
     private Properties properties;
 
-    public BeanDefinition(Class bean) {
-        this.beanClass = bean;
+    public BeanDefinition(Class beanClass) {
+        this(beanClass, new Properties());
     }
 
     public BeanDefinition(Class beanClass, Properties properties) {

@@ -15,7 +15,7 @@ public class UserService {
 
 
     @Test
-    public void queryUserInfo(){
-        System.out.println(userDao.getStatus(signal));
+    public String queryUserInfo(){
+        return userDao.getStatus(signal);
     }
 }

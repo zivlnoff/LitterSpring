@@ -12,7 +12,10 @@ import org.w3c.dom.NodeList;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 //book代码可以解决先注册后由第一次调用get时候生成单例对象
 //可以乱序注册bean
@@ -27,7 +30,7 @@ public class XmlBeanDefinitionReader implements AbstractBeanDefinitionReader {
     }
 
     @Override
-    public List<BeanDefinition> resource2BeanDefinition(String location) throws ClassNotFoundException {
+    public Map<String, BeanDefinition> resource2BeanDefinition(String location) throws ClassNotFoundException {
         Resource resource = resourceLoader.getResource(location);
         InputStream inputStream = null;
         try {
@@ -39,6 +42,7 @@ public class XmlBeanDefinitionReader implements AbstractBeanDefinitionReader {
         Element root = doc.getDocumentElement();
         NodeList childNodes = root.getChildNodes();
 
+        Map<String, BeanDefinition> producedBeanDefinition = new ConcurrentHashMap<>();
         for (int i = 0; i < childNodes.getLength(); i++) {
             // 判断元素
             if (!(childNodes.item(i) instanceof Element)) continue;
@@ -72,15 +76,17 @@ public class XmlBeanDefinitionReader implements AbstractBeanDefinitionReader {
                 // 获取属性值：引入对象、值对象
                 Object value = StrUtil.isNotEmpty(attrRef) ? new BeanReference(attrRef) : attrValue;
                 // 创建属性信息
-                Property propertyValue = new Property(attrName, value);
-                beanDefinition.getBeanDefinitionProperties().addPropertyValue(attrName ,propertyValue);
+//                Property propertyValue = new Property(attrName, value);
+                beanDefinition.getBeanDefinitionProperties().addPropertyValue(attrName, value);
             }
+
+            producedBeanDefinition.put(beanName, beanDefinition);
 //            if (getRegistry().containsBeanDefinition(beanName)) {
 //                throw new BeansException("Duplicate beanName[" + beanName + "] is not allowed");
 //            }
 //             //注册 BeanDefinition
 //            getRegistry().registerBeanDefinition(beanName, beanDefinition);
         }
-        return  null;
+        return producedBeanDefinition;
     }
 }
