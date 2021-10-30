@@ -3,10 +3,17 @@ package cn.bugstack.springframework.beans.factory.support;
 import cn.bugstack.springframework.beans.BeansException;
 import cn.bugstack.springframework.beans.factory.BeanFactory;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
+import cn.bugstack.springframework.beans.factory.config.BeanPostProcessor;
+import cn.bugstack.springframework.beans.factory.config.ConfigurableBeanFactory;
 import sun.swing.BeanInfoUtils;
 
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
-    abstract protected Object createBeanObject(String name, BeanDefinition beanDefinition) throws BeansException;
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements ConfigurableBeanFactory {
+    private List<BeanPostProcessor> beanPostProcessors = new ArrayList<>();
+
+    abstract protected Object createBean(String name, BeanDefinition beanDefinition) throws BeansException;
 
     abstract protected BeanDefinition getBeanDefinition(String name);
 
@@ -18,8 +25,22 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         }
 
         BeanDefinition beanDefinition = getBeanDefinition(name);
-        object = createBeanObject(name, beanDefinition);
+        object = createBean(name, beanDefinition);
 
         return object;
+    }
+
+    @Override
+    public <T> T getBean(String name, Class<T> tClass) {
+        return (T) getBean(name);
+    }
+
+    @Override
+    public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor) {
+        beanPostProcessors.add(beanPostProcessor);
+    }
+
+    protected List<BeanPostProcessor> getBeanPostProcessors(){
+        return beanPostProcessors;
     }
 }

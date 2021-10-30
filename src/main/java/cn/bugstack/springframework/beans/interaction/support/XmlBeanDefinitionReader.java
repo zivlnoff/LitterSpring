@@ -2,7 +2,6 @@ package cn.bugstack.springframework.beans.interaction.support;
 
 import cn.bugstack.springframework.beans.factory.config.BeanReference;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
-import cn.bugstack.springframework.beans.interaction.support.AbstractBeanDefinitionReader;
 import cn.bugstack.springframework.beans.resolver.config.Resource;
 import cn.bugstack.springframework.beans.resolver.service.ResourceLoader;
 import cn.hutool.core.util.StrUtil;
@@ -21,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import static java.rmi.registry.LocateRegistry.getRegistry;
 
-public class XmlBeanDefinitionReader implements AbstractBeanDefinitionReader {
+public class XmlBeanDefinitionReader implements BeanDefinitionReader {
     private ResourceLoader resourceLoader;
 
     public XmlBeanDefinitionReader(ResourceLoader resourceLoader) {
@@ -29,7 +28,7 @@ public class XmlBeanDefinitionReader implements AbstractBeanDefinitionReader {
     }
 
     @Override
-    public Map<String, BeanDefinition> resource2BeanDefinition(String location) throws ClassNotFoundException {
+    public Map<String, BeanDefinition> resource2BeanDefinitions(String location) throws ClassNotFoundException {
         Resource resource = resourceLoader.getResource(location);
         InputStream inputStream = null;
         try {

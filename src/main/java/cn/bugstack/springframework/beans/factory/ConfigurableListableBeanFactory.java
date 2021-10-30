@@ -1,8 +1,12 @@
 package cn.bugstack.springframework.beans.factory;
 
-import cn.bugstack.springframework.beans.factory.config.AutowireCapableBeanFactory;
-import cn.bugstack.springframework.beans.factory.config.ConfigurableBeanFactory;
+import cn.bugstack.springframework.beans.factory.config.*;
+import cn.bugstack.springframework.beans.factory.support.BeanDefinitionRegistry;
 
-public interface ConfigurableListableBeanFactory extends ConfigurableBeanFactory, AutowireCapableBeanFactory, ListableBeanFactory {
+import java.util.List;
 
+//感觉没必要实现AutowireCapableBeanFactory这个接口呢？ß
+public interface ConfigurableListableBeanFactory extends ConfigurableBeanFactory, AutowireCapableBeanFactory, ListableBeanFactory, BeanDefinitionRegistry {
+    BeanDefinition getBeanDefinition(String name);
+    void preInstantiateSingletons();
 }

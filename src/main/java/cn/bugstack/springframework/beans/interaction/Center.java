@@ -1,18 +1,18 @@
 package cn.bugstack.springframework.beans.interaction;
 
+import cn.bugstack.springframework.beans.context.support.AbstractRefreshableApplicationContext;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
-import cn.bugstack.springframework.beans.factory.support.BeanDefinitionRegistry;
-import cn.bugstack.springframework.beans.interaction.support.AbstractBeanDefinitionReader;
+import cn.bugstack.springframework.beans.interaction.support.BeanDefinitionReader;
 import com.sun.tools.javac.util.Assert;
 
 import java.util.Map;
 
 public class Center {
-    private BeanDefinitionRegistry beanFactory;
-    private AbstractBeanDefinitionReader beanDefinitionReader;
+    private AbstractRefreshableApplicationContext refreshableApplicationContext;
+    private BeanDefinitionReader beanDefinitionReader;
 
-    public Center(BeanDefinitionRegistry beanFactory, AbstractBeanDefinitionReader beanDefinitionReader) {
-        this.beanFactory = beanFactory;
+    public Center(AbstractRefreshableApplicationContext refreshableApplicationContext , BeanDefinitionReader beanDefinitionReader) {
+        this.refreshableApplicationContext = refreshableApplicationContext;
         this.beanDefinitionReader = beanDefinitionReader;
     }
 
@@ -20,30 +20,29 @@ public class Center {
         Map<String, BeanDefinition> producedBeanDefinition = null;
 
         try {
-            producedBeanDefinition = beanDefinitionReader.resource2BeanDefinition(location);
+            producedBeanDefinition = beanDefinitionReader.resource2BeanDefinitions(location);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         Assert.checkNonNull(producedBeanDefinition, "producedBeanDefinition is null.");
-        for(Map.Entry<String, BeanDefinition> entry: producedBeanDefinition.entrySet()) {
-            beanFactory.beanDefinitionRegistry(entry.getKey(), entry.getValue());
-        }
+
+        refreshableApplicationContext.refresh(producedBeanDefinition);
     }
 
-    public void setBeanFactory(BeanDefinitionRegistry beanFactory) {
-        this.beanFactory = beanFactory;
-    }
-
-    public BeanDefinitionRegistry getBeanFactory() {
-        return beanFactory;
-    }
-
-    public void setBeanDefinitionReader(AbstractBeanDefinitionReader beanDefinitionReader) {
+    public void setBeanDefinitionReader(BeanDefinitionReader beanDefinitionReader) {
         this.beanDefinitionReader = beanDefinitionReader;
     }
 
-    public AbstractBeanDefinitionReader getBeanDefinitionReader() {
+    public BeanDefinitionReader getBeanDefinitionReader() {
         return beanDefinitionReader;
+    }
+
+    public void setRefreshableApplicationContext(AbstractRefreshableApplicationContext refreshableApplicationContext) {
+        this.refreshableApplicationContext = refreshableApplicationContext;
+    }
+
+    public AbstractRefreshableApplicationContext getRefreshableApplicationContext() {
+        return refreshableApplicationContext;
     }
 }

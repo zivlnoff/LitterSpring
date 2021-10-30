@@ -1,4 +1,8 @@
 package cn.bugstack.springframework.beans.context;
 
-public interface ApplicationContext {
+import cn.bugstack.springframework.beans.factory.ListableBeanFactory;
+import cn.bugstack.springframework.beans.factory.support.DefaultListableBeanFactory;
+
+public interface ApplicationContext extends ListableBeanFactory{
+
 }

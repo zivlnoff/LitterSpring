@@ -17,6 +17,7 @@ public class Properties {
     private List<Property> properties = new ArrayList<>();
 
     public void addPropertyValue(String name, Object propertyValue) {
+        removePropertyValue(name);
         properties.add(new Property(name, propertyValue));
     }
 
@@ -30,5 +31,13 @@ public class Properties {
             propertiesObject[i] = properties.get(i).getValue();
         }
         return propertiesObject;
+    }
+
+    private void removePropertyValue(String name){
+        for(int i = 0; i<properties.size(); i++){
+            if(properties.get(i).getName().equals(name)){
+                properties.remove(i);
+            }
+        }
     }
 }
