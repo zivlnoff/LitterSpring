@@ -6,4 +6,8 @@ import java.util.Map;
 
 public interface ConfigurableApplicationContext extends ApplicationContext{
     void refresh(Map<String, BeanDefinition> beanDefinitionMap);
+
+    void registerShutdownHook();
+
+    void close();
 }

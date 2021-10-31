@@ -10,4 +10,5 @@ import cn.bugstack.springframework.beans.factory.BeanFactory;
  */
 public interface ConfigurableBeanFactory extends BeanFactory {
     void addBeanPostProcessor(BeanPostProcessor beanPostProcessor);
+    void destroySingletons();
 }

@@ -34,18 +34,28 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
     abstract public ConfigurableListableBeanFactory getBeanFactory();
 
     //因为不是组合去解决这个调用问题，而是通过把BeanFactoryPostProcessor注册进去来解决
-    void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory){
+    private void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory){
         Map<String, BeanFactoryPostProcessor> beanFactoryPostProcessors = beanFactory.getBeansOfType(BeanFactoryPostProcessor.class);
         for(BeanFactoryPostProcessor beanFactoryPostProcessor: beanFactoryPostProcessors.values()){
             beanFactoryPostProcessor.postProcessBeanFactory(beanFactory);
         }
     }
 
-    void registerBeanPostProcessors(ConfigurableListableBeanFactory beanFactory){
+    private void registerBeanPostProcessors(ConfigurableListableBeanFactory beanFactory){
         Map<String, BeanPostProcessor> beanPostProcessors = beanFactory.getBeansOfType(BeanPostProcessor.class);
         for(BeanPostProcessor beanPostProcessor: beanPostProcessors.values()){
             beanFactory.addBeanPostProcessor(beanPostProcessor);
         }
+    }
+
+    @Override
+    public void registerShutdownHook() {
+        Runtime.getRuntime().addShutdownHook(new Thread(this::close));
+    }
+
+    @Override
+    public void close() {
+        getBeanFactory().destroySingletons();
     }
 
     @Override

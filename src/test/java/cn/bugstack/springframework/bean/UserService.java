@@ -1,13 +1,27 @@
 package cn.bugstack.springframework.bean;
 
 
+import cn.bugstack.springframework.beans.factory.DisposableBean;
+import cn.bugstack.springframework.beans.factory.InitializingBean;
 import org.junit.Test;
 
-public class UserService {
+import java.lang.reflect.InvocationTargetException;
+
+public class UserService implements InitializingBean, DisposableBean {
     private String uId;
     private String company;
     private String location;
     private UserDao userDao;
+
+    @Override
+    public void destroy() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        System.out.println("执行: UserService.destroy");
+    }
+
+    @Override
+    public void afterPropertiesSet() {
+        System.out.println("执行: UserService.afterPropertiesSet");
+    }
 
     public String queryUserInfo() {
         return userDao.queryUserName(uId) + "," + company + "," + location;
