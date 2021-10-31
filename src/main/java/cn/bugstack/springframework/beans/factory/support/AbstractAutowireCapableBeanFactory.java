@@ -37,7 +37,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         registerDisposableBeanIfNecessary(beanName, beanObject, beanDefinition);
 
         //单例存入内存
-        addSingleton(beanName, beanObject);
+        if(beanDefinition.isSingleton()) {
+            addSingleton(beanName, beanObject);
+        }
         return beanObject;
     }
 
@@ -60,7 +62,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             Object value = property.getValue();
 
             if (value instanceof BeanReference) {
-                value = getBean(name);
+                Object tmp = value;
+                value = null;
+                value = getBean(((BeanReference) tmp).getName());
             }
 
             BeanUtil.setFieldValue(beanObject, name, value);
@@ -126,6 +130,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     }
 
     protected void registerDisposableBeanIfNecessary(String beanName, Object bean, BeanDefinition beanDefinition){
+        if(!beanDefinition.isSingleton()) return;
+
         if(bean instanceof DisposableBean || StrUtil.isNotEmpty(beanDefinition.getDestroyMethodName())){
             registerDisposableBean(beanName, new DisposableBeanAdapter(bean, beanName, beanDefinition));
         }

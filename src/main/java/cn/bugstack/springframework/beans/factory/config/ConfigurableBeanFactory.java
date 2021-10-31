@@ -9,6 +9,8 @@ import cn.bugstack.springframework.beans.factory.BeanFactory;
  * interface.
  */
 public interface ConfigurableBeanFactory extends BeanFactory {
+    String SCOPE_SINGLETON = "singleton";
+    String SCOPE_PROTOTYPE = "prototype";
     void addBeanPostProcessor(BeanPostProcessor beanPostProcessor);
     void destroySingletons();
 }
