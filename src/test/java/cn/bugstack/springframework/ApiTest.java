@@ -119,6 +119,17 @@ public class ApiTest {
     }
 
     @Test
+    public void test_factory_bean() {
+        // 1.初始化 BeanFactory
+        center.loadResource("classpath:springFactoryBean.xml");
+        center.getRefreshableApplicationContext().registerShutdownHook();
+
+        // 2. 调用代理方法
+        UserService userService = center.getRefreshableApplicationContext().getBean("userService", UserService.class);
+        System.out.println("测试结果：" + userService.queryUserInfo());
+    }
+
+    @Test
     public void test_hook() {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> System.out.println("close！")));
     }

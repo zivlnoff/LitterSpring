@@ -3,7 +3,7 @@ package cn.bugstack.springframework.bean;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserDao {
+public class UserDao implements IUserDao{
     private static Map<String, String> hashMap = new HashMap<>();
 
     public void initDataMethod(){
