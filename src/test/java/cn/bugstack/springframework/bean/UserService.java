@@ -1,17 +1,22 @@
 package cn.bugstack.springframework.bean;
 
 
-import cn.bugstack.springframework.beans.factory.DisposableBean;
-import cn.bugstack.springframework.beans.factory.InitializingBean;
+import cn.bugstack.springframework.beans.context.ApplicationContext;
+import cn.bugstack.springframework.beans.factory.*;
 import org.junit.Test;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class UserService implements InitializingBean, DisposableBean {
+public class UserService implements InitializingBean, DisposableBean, BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, ApplicationContextAware {
     private String uId;
     private String company;
     private String location;
     private UserDao userDao;
+
+    private BeanFactory beanFactory;
+    private ApplicationContext applicationContext;
+    private ClassLoader classLoader;
+    private String beanName;
 
     @Override
     public void destroy() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -25,6 +30,42 @@ public class UserService implements InitializingBean, DisposableBean {
 
     public String queryUserInfo() {
         return userDao.queryUserName(uId) + "," + company + "," + location;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
+    @Override
+    public void setBeanClassLoaderAware(ClassLoader classLoader) {
+        this.classLoader = classLoader;
+    }
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) {
+        this.beanFactory = beanFactory;
+    }
+
+    @Override
+    public void setBeanName(String beanName) {
+        this.beanName = beanName;
+    }
+
+    public BeanFactory getBeanFactory() {
+        return beanFactory;
+    }
+
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
+
+    public ClassLoader getClassLoader() {
+        return classLoader;
+    }
+
+    public String getBeanName() {
+        return beanName;
     }
 
     public String getuId() {

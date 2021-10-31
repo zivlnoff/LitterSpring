@@ -1,12 +1,13 @@
 package cn.bugstack.springframework.beans.context.support;
 
 import cn.bugstack.springframework.beans.context.ConfigurableApplicationContext;
+import cn.bugstack.springframework.beans.factory.ApplicationContextAware;
 import cn.bugstack.springframework.beans.factory.ConfigurableListableBeanFactory;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import cn.bugstack.springframework.beans.factory.config.BeanPostProcessor;
+import cn.bugstack.springframework.beans.factory.support.ApplicationContextAwareProcessor;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -18,6 +19,9 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
 
         //获取beanFactory
         ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+
+        //添加Processor让bean实例化的时候能感知到ApplicationContext
+        beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
 
         //invokeBeanFactoryPostProcessor
         invokeBeanFactoryPostProcessors(beanFactory);

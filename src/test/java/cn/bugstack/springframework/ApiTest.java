@@ -102,6 +102,23 @@ public class ApiTest {
     }
 
     @Test
+    public void test_xml4() {
+        // 1.初始化 BeanFactory
+        center.loadResource("classpath:springInitDestroy.xml");
+        center.getRefreshableApplicationContext().registerShutdownHook();
+
+        // 2. 获取Bean对象调用方法
+        UserService userService = center.getRefreshableApplicationContext().getBean("userService", UserService.class);
+        String result = userService.queryUserInfo();
+        System.out.println("测试结果：" + result);
+
+        System.out.println("ApplicationContextAware："+userService.getApplicationContext());
+        System.out.println("BeanFactoryAware：" + userService.getBeanFactory());
+        System.out.println("BeanNameAware: " + userService.getBeanName());
+        System.out.println("ClassLoaderAware: " + userService.getClassLoader());
+    }
+
+    @Test
     public void test_hook() {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> System.out.println("close！")));
     }

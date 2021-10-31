@@ -1,8 +1,7 @@
 package cn.bugstack.springframework.beans.factory.support;
 
 import cn.bugstack.springframework.beans.Property;
-import cn.bugstack.springframework.beans.factory.DisposableBean;
-import cn.bugstack.springframework.beans.factory.InitializingBean;
+import cn.bugstack.springframework.beans.factory.*;
 import cn.bugstack.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import cn.bugstack.springframework.beans.factory.config.BeanPostProcessor;
 import cn.bugstack.springframework.beans.factory.config.BeanReference;
@@ -69,6 +68,16 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     }
 
     private Object initializeBean(String beanName, Object beanObject, BeanDefinition beanDefinition) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+        if(beanObject instanceof BeanNameAware){
+            ((BeanNameAware) beanObject).setBeanName(beanName);
+        }
+        if(beanObject instanceof BeanFactoryAware){
+            ((BeanFactoryAware) beanObject).setBeanFactory(this);
+        }
+        if(beanObject instanceof BeanClassLoaderAware){
+            ((BeanClassLoaderAware) beanObject).setBeanClassLoaderAware(getBeanClassLoader());
+        }
+
         //实例化前置操作
         //为什么不直接在beanObject上进行修改
         Object wrappedBean = applyBeanPostProcessorBeforeInitialization(beanObject, beanName);

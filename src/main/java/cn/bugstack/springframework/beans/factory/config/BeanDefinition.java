@@ -2,6 +2,8 @@ package cn.bugstack.springframework.beans.factory.config;
 
 
 import cn.bugstack.springframework.beans.Properties;
+import cn.bugstack.springframework.beans.context.ApplicationContext;
+import cn.bugstack.springframework.beans.factory.BeanFactory;
 
 /*
  * 用于定义Bean实例化信息
