@@ -24,13 +24,40 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="FactoryBean动态代理发布。">
+    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="观察者模式实现事件监听器发布，熟练掌握事件监听器和应用上下文的结合方式很重要（简简单单加个接口实现扩展）。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/context/ApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/context/support/AbstractApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/common/ProxyBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/common/ProxyBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Center.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/Center.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/support/BeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/support/BeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/interaction/support/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/support/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/ApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/bean/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/bean/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/bean/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/bean/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/common/MyBeanFactoryPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/common/MyBeanFactoryPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/common/MyBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/common/MyBeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/common/ProxyBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/common/ProxyBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/springFactoryBean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/springFactoryBean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/springInitDestroy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/springInitDestroy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/springPostProcessor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/springPostProcessor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/LittleSpring.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/interaction/Center.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/interaction/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/interaction/support/BeanDefinitionReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/interaction/support/XmlBeanDefinitionReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/ApiTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/IUserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/bean/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/common/MyBeanFactoryPostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/common/MyBeanPostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/common/ProxyBeanFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/springFactoryBean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/springFactoryBean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/springInitDestroy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/springInitDestroy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/springPostProcessor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/springPostProcessor.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,24 +121,41 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cn.bugstack.springframework.beans" />
       <recent name="cn.bugstack.springframework" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="cn.bugstack.springframework.config" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApiTest">
+  <component name="RunManager" selected="JUnit.ApiTest.test_dynamic">
     <configuration name="ApiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LittleSpring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.bugstack.springframework.*" />
+          <option name="PATTERN" value="cn.bugstack.springframework.beans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.bugstack.springframework" />
-      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.ApiTest" />
+      <option name="PACKAGE_NAME" value="cn.bugstack.springframework.beans" />
+      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.beans.ApiTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiTest.test_dynamic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LittleSpring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.bugstack.springframework.aop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.bugstack.springframework.aop" />
+      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.aop.ApiTest" />
+      <option name="METHOD_NAME" value="test_dynamic" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,12 +164,12 @@
       <module name="LittleSpring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.bugstack.springframework.*" />
+          <option name="PATTERN" value="cn.bugstack.springframework.beans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.bugstack.springframework" />
-      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.ApiTest" />
+      <option name="PACKAGE_NAME" value="cn.bugstack.springframework.beans" />
+      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.beans.ApiTest" />
       <option name="METHOD_NAME" value="test_event" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -136,29 +180,13 @@
       <module name="LittleSpring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.bugstack.springframework.*" />
+          <option name="PATTERN" value="cn.bugstack.springframework.beans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.bugstack.springframework" />
-      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.ApiTest" />
+      <option name="PACKAGE_NAME" value="cn.bugstack.springframework.beans" />
+      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.beans.ApiTest" />
       <option name="METHOD_NAME" value="test_factory_bean" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApiTest.test_xml3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LittleSpring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.bugstack.springframework.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.bugstack.springframework" />
-      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.ApiTest" />
-      <option name="METHOD_NAME" value="test_xml3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,12 +196,12 @@
       <module name="LittleSpring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.bugstack.springframework.*" />
+          <option name="PATTERN" value="cn.bugstack.springframework.beans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.bugstack.springframework" />
-      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.ApiTest" />
+      <option name="PACKAGE_NAME" value="cn.bugstack.springframework.beans" />
+      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.beans.ApiTest" />
       <option name="METHOD_NAME" value="test_xml4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -182,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiTest.test_dynamic" />
         <item itemvalue="JUnit.ApiTest" />
         <item itemvalue="JUnit.ApiTest.test_event" />
         <item itemvalue="JUnit.ApiTest.test_factory_bean" />
         <item itemvalue="JUnit.ApiTest.test_xml4" />
-        <item itemvalue="JUnit.ApiTest.test_xml3" />
       </list>
     </recent_temporary>
   </component>
@@ -364,7 +392,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635732032376</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="观察者模式实现事件监听器发布，熟练掌握事件监听器和应用上下文的结合方式很重要（简简单单加个接口实现扩展）。">
+      <created>1635748953775</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1635748953775</updated>
+    </task>
+    <task id="LOCAL-00025" summary="观察者模式实现事件监听器发布，熟练掌握事件监听器和应用上下文的结合方式很重要（简简单单加个接口实现扩展）。">
+      <created>1635748961590</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1635748961590</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -413,7 +455,8 @@
     <MESSAGE value="增加bean初始化和销毁hook（定义销毁方法适配器&lt;接口和配置两种销毁方法均可）" />
     <MESSAGE value="bean感知发布。" />
     <MESSAGE value="FactoryBean动态代理发布。" />
-    <option name="LAST_COMMIT_MESSAGE" value="FactoryBean动态代理发布。" />
+    <MESSAGE value="观察者模式实现事件监听器发布，熟练掌握事件监听器和应用上下文的结合方式很重要（简简单单加个接口实现扩展）。" />
+    <option name="LAST_COMMIT_MESSAGE" value="观察者模式实现事件监听器发布，熟练掌握事件监听器和应用上下文的结合方式很重要（简简单单加个接口实现扩展）。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1194" y="68" key="#Auto_Import" timestamp="1635324315880">
@@ -424,10 +467,10 @@
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1311" y="55" key="#File_and_Code_Templates/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635479674434" />
-    <state x="-1472" y="-71" key="#Project_Structure" timestamp="1635479537900">
+    <state x="-1472" y="-71" key="#Project_Structure" timestamp="1635750489507">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1472" y="-71" key="#Project_Structure/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635479537900" />
+    <state x="-1472" y="-71" key="#Project_Structure/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635750489507" />
     <state x="336" y="57" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1635262686343" />
     <state x="-1472" y="-49" key="#Project_Structure/0.25.1440.803/-1920.-155.1920.1055@-1920.-155.1920.1055" timestamp="1635236215868" />
     <state x="-1496" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635305910715">
@@ -439,10 +482,10 @@
     </state>
     <state x="419" y="256" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1635672026555" />
     <state x="-1361" y="127" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635739222779" />
-    <state x="-1147" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1635748582177">
+    <state x="-1147" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1635755174451">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1147" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748582177" />
+    <state x="-1147" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635755174451" />
     <state x="-1147" y="260" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635583910677" />
     <state x="580" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1635696608000" />
     <state x="-1147" y="63" key="#com.intellij.ide.util.MemberChooser/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635240796673" />
@@ -450,23 +493,23 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="230" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1635261643902" />
-    <state x="-1348" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1635408618136">
+    <state x="-1348" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1635756220237">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1348" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635408618136" />
-    <state x="-1191" y="233" width="527" height="262" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1635398941018">
+    <state x="-1348" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756220237" />
+    <state x="-1191" y="233" width="527" height="262" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1635756214155">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1191" y="233" width="527" height="262" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635398941018" />
-    <state x="-1256" y="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1635408619751">
+    <state x="-1191" y="233" width="527" height="262" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756214155" />
+    <state x="-1256" y="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1635756222372">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1256" y="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635408619751" />
+    <state x="-1256" y="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756222372" />
     <state x="498" y="335" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.900@0.0.1440.900" timestamp="1635260853098" />
-    <state x="-1595" y="-180" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1635741004868">
+    <state x="-1595" y="-180" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1635755237523">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1595" y="-180" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635741004868" />
+    <state x="-1595" y="-180" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635755237523" />
     <state x="-1595" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635583074084" />
     <state x="524" y="243" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1635692281520">
       <screen x="0" y="0" width="1440" height="900" />
@@ -482,78 +525,78 @@
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
     <state x="-1121" y="31" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635306223719" />
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom" timestamp="1635748310956">
+    <state width="1878" height="376" key="GridCell.Tab.0.bottom" timestamp="1635756920851">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310956" />
+    <state width="1878" height="376" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920851" />
     <state width="1878" height="376" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446254" />
     <state width="1398" height="304" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1635698460506" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.25.1440.803@0.25.1440.803" timestamp="1635265999133" />
     <state width="1878" height="254" key="GridCell.Tab.0.bottom/0.25.1440.814/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635666297171" />
     <state width="1878" height="376" key="GridCell.Tab.0.bottom/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682753" />
     <state width="1878" height="307" key="GridCell.Tab.0.bottom/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403204" />
-    <state width="1878" height="376" key="GridCell.Tab.0.center" timestamp="1635748310955">
+    <state width="1878" height="376" key="GridCell.Tab.0.center" timestamp="1635756920849">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310955" />
+    <state width="1878" height="376" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920849" />
     <state width="1878" height="376" key="GridCell.Tab.0.center/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446252" />
     <state width="1398" height="304" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1635698460505" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.25.1440.803@0.25.1440.803" timestamp="1635265999132" />
     <state width="1878" height="254" key="GridCell.Tab.0.center/0.25.1440.814/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635666297170" />
     <state width="1878" height="376" key="GridCell.Tab.0.center/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682748" />
     <state width="1878" height="307" key="GridCell.Tab.0.center/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403200" />
-    <state width="1878" height="376" key="GridCell.Tab.0.left" timestamp="1635748310954">
+    <state width="1878" height="376" key="GridCell.Tab.0.left" timestamp="1635756920848">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310954" />
+    <state width="1878" height="376" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920848" />
     <state width="1878" height="376" key="GridCell.Tab.0.left/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446247" />
     <state width="1398" height="304" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1635698460504" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.25.1440.803@0.25.1440.803" timestamp="1635265999131" />
     <state width="1878" height="254" key="GridCell.Tab.0.left/0.25.1440.814/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635666297169" />
     <state width="1878" height="376" key="GridCell.Tab.0.left/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682745" />
     <state width="1878" height="307" key="GridCell.Tab.0.left/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403199" />
-    <state width="1878" height="376" key="GridCell.Tab.0.right" timestamp="1635748310956">
+    <state width="1878" height="376" key="GridCell.Tab.0.right" timestamp="1635756920850">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310956" />
+    <state width="1878" height="376" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920850" />
     <state width="1878" height="376" key="GridCell.Tab.0.right/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446253" />
     <state width="1398" height="304" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1635698460505" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.25.1440.803@0.25.1440.803" timestamp="1635265999132" />
     <state width="1878" height="254" key="GridCell.Tab.0.right/0.25.1440.814/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635666297170" />
     <state width="1878" height="376" key="GridCell.Tab.0.right/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682751" />
     <state width="1878" height="307" key="GridCell.Tab.0.right/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635340403203" />
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1635748310964">
+    <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1635756920856">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310964" />
+    <state width="1878" height="376" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920856" />
     <state width="1878" height="376" key="GridCell.Tab.1.bottom/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446258" />
     <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1635698460508" />
     <state width="1878" height="376" key="GridCell.Tab.1.bottom/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682758" />
-    <state width="1878" height="376" key="GridCell.Tab.1.center" timestamp="1635748310959">
+    <state width="1878" height="376" key="GridCell.Tab.1.center" timestamp="1635756920854">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310959" />
+    <state width="1878" height="376" key="GridCell.Tab.1.center/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920854" />
     <state width="1878" height="376" key="GridCell.Tab.1.center/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446255" />
     <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1635698460507" />
     <state width="1878" height="376" key="GridCell.Tab.1.center/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682756" />
-    <state width="1878" height="376" key="GridCell.Tab.1.left" timestamp="1635748310957">
+    <state width="1878" height="376" key="GridCell.Tab.1.left" timestamp="1635756920852">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310957" />
+    <state width="1878" height="376" key="GridCell.Tab.1.left/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920852" />
     <state width="1878" height="376" key="GridCell.Tab.1.left/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446255" />
     <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1635698460506" />
     <state width="1878" height="376" key="GridCell.Tab.1.left/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682754" />
-    <state width="1878" height="376" key="GridCell.Tab.1.right" timestamp="1635748310960">
+    <state width="1878" height="376" key="GridCell.Tab.1.right" timestamp="1635756920855">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748310960" />
+    <state width="1878" height="376" key="GridCell.Tab.1.right/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756920855" />
     <state width="1878" height="376" key="GridCell.Tab.1.right/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635590446256" />
     <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1635698460507" />
     <state width="1878" height="376" key="GridCell.Tab.1.right/0.25.1440.875/-1920.-155.1920.991@-1920.-155.1920.991" timestamp="1635513682757" />
-    <state x="-1422" y="19" key="Maven.ArtifactSearchDialog" timestamp="1635422122747">
+    <state x="-1450" y="94" key="Maven.ArtifactSearchDialog" timestamp="1635755033750">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1422" y="19" key="Maven.ArtifactSearchDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635422122747" />
+    <state x="-1450" y="94" key="Maven.ArtifactSearchDialog/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635755033750" />
     <state x="-1070" y="231" width="609" height="258" key="MultipleFileMergeDialog" timestamp="1635732326601">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
@@ -563,10 +606,10 @@
     </state>
     <state x="-1472" y="-62" key="SettingsEditor/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635480164764" />
     <state x="-1472" y="-70" key="SettingsEditor/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246936482" />
-    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2" timestamp="1635732389721">
+    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2" timestamp="1635748977014">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635732389721" />
+    <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635748977014" />
     <state x="420" y="231" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1635698454702" />
     <state x="-1360" y="79" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1008@-1920.-180.1920.1008" timestamp="1635246949929" />
     <state x="-1360" y="97" key="Vcs.Push.Dialog.v2/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635732167874" />
@@ -603,10 +646,10 @@
     </state>
     <state x="-1295" y="165" key="run.anything.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635247248248" />
     <state x="-1295" y="165" key="run.anything.popup/0.25.1440.875/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635739114646" />
-    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup" timestamp="1635747947379">
+    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup" timestamp="1635756271393">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>
-    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635747947379" />
+    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1635756271393" />
     <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1635586570541" />
     <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1635696367561" />
     <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.25.1440.803@0.25.1440.803" timestamp="1635344970032" />
@@ -628,18 +671,18 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>85</line>
+          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/ApiTest.java</url>
+          <line>72</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/common/MyBeanFactoryPostProcessor.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/common/MyBeanFactoryPostProcessor.java</url>
           <line>16</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>52</line>
+          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/ApiTest.java</url>
+          <line>39</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -648,9 +691,14 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/ApiTest.java</url>
-          <line>136</line>
+          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/beans/ApiTest.java</url>
+          <line>123</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/aop/ApiTest.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
