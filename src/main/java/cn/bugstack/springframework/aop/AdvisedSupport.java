@@ -4,9 +4,20 @@ package cn.bugstack.springframework.aop;
 import org.aopalliance.intercept.MethodInterceptor;
 
 public class AdvisedSupport {
+    // ProxyConfig
+    private boolean proxyTargetClass = false;
+
     private TargetSource targetSource;
     private MethodInterceptor methodInterceptor;
     private MethodMatcher methodMatcher;
+
+    public void setProxyTargetClass(boolean is){
+        this.proxyTargetClass = is;
+    }
+
+    public boolean isProxyTargetClass() {
+        return proxyTargetClass;
+    }
 
     public TargetSource getTargetSource() {
         return targetSource;
