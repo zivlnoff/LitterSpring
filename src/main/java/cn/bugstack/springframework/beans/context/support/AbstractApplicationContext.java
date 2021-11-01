@@ -1,7 +1,10 @@
 package cn.bugstack.springframework.beans.context.support;
 
 import cn.bugstack.springframework.beans.context.ConfigurableApplicationContext;
-import cn.bugstack.springframework.beans.factory.ApplicationContextAware;
+import cn.bugstack.springframework.beans.context.Event;
+import cn.bugstack.springframework.beans.context.EventMultiCaster;
+import cn.bugstack.springframework.beans.context.config.ContextClosedEvent;
+import cn.bugstack.springframework.beans.context.config.ContextRefreshedEvent;
 import cn.bugstack.springframework.beans.factory.ConfigurableListableBeanFactory;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.factory.config.BeanFactoryPostProcessor;
@@ -12,6 +15,8 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class AbstractApplicationContext implements ConfigurableApplicationContext{
+    private EventMultiCaster eventMultiCaster;
+
     @Override
     public void refresh(Map<String, BeanDefinition> beanDefinitionMap) {
         //初始化容器->主要是定义注册BeanDefinition方法，对吗。
@@ -26,12 +31,40 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
         //invokeBeanFactoryPostProcessor
         invokeBeanFactoryPostProcessors(beanFactory);
 
-        //所有的属性都是注入进去，没有任何组合的，太屌了。
-        //4. BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行注册操作
+        //BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行注册操作
         registerBeanPostProcessors(beanFactory);
+
+        //设置事件监听广播器
+        initEventMultiCaster();
+
+        //注册事件监听器
+        registerEventListener();
 
         //preInstantiateSingletons实例bean
         beanFactory.preInstantiateSingletons();
+
+        //结束Refresh事件发生
+        finishRefresh();
+    }
+
+    private void finishRefresh() {
+        eventOccur(new ContextRefreshedEvent(this));
+    }
+
+    @Override
+    public void eventOccur(Event event) {
+        eventMultiCaster.multiCastEvent(event);
+    }
+
+    private void registerEventListener() {
+        Map<String, EventListener> eventListenerMap = getBeanFactory().getBeansOfType(EventListener.class);
+        for(EventListener eventListener: eventListenerMap.values()){
+            eventMultiCaster.addEventListener(eventListener);
+        }
+    }
+
+    private void initEventMultiCaster() {
+        eventMultiCaster = new SimpleEventMultiCaster();
     }
 
     abstract protected void refreshBeanFactory(Map<String, BeanDefinition> beanDefinitionMap);
@@ -59,6 +92,10 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
 
     @Override
     public void close() {
+        //发布容器关闭事件
+        eventOccur(new ContextClosedEvent(this));
+
+        //执行销毁单例bean的销毁方法
         getBeanFactory().destroySingletons();
     }
 

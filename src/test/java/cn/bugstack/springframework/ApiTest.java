@@ -18,10 +18,12 @@ import cn.bugstack.springframework.beans.resolver.service.ResourceLoader;
 import cn.bugstack.springframework.beans.interaction.support.XmlBeanDefinitionReader;
 import cn.bugstack.springframework.common.MyBeanFactoryPostProcessor;
 import cn.bugstack.springframework.common.MyBeanPostProcessor;
+import cn.bugstack.springframework.event.CustomEvent;
 import cn.hutool.core.io.IoUtil;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.security.auth.Refreshable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
@@ -127,6 +129,18 @@ public class ApiTest {
         // 2. 调用代理方法
         UserService userService = center.getRefreshableApplicationContext().getBean("userService", UserService.class);
         System.out.println("测试结果：" + userService.queryUserInfo());
+    }
+
+    @Test
+    public void test_event() {
+        // 1.初始化 BeanFactory
+        center.loadResource("classpath:springEventListen.xml");
+
+        AbstractRefreshableApplicationContext applicationContext = center.getRefreshableApplicationContext();
+        // 2.发布事件
+        applicationContext.eventOccur(new CustomEvent(applicationContext, 1019129009086763L, "成功了！"));
+
+        applicationContext.registerShutdownHook();
     }
 
     @Test
