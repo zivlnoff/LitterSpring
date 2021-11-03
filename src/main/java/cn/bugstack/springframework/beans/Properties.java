@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-//Property的成员可以用树状结构表示 是否可以采用组合结构性设计方案
-//无论是引用类型还是基本类型，需要共同的接口定义，在其中声明一个通用的方法
-//但是调用的方法并不在属性类里
-//如果判断属性类型，可以用ClassLoader区别
-//但是尽量不要用语言特性，语言特性可以人为变动？
 public class Properties {
     private List<Property> properties = new ArrayList<>();
+
+    public void addPropertyValue(Property propertyValue) {
+        removePropertyValue(propertyValue.getName());
+        properties.add(propertyValue);
+    }
 
     public void addPropertyValue(String name, Object propertyValue) {
         removePropertyValue(name);
@@ -39,9 +39,5 @@ public class Properties {
                 properties.remove(i);
             }
         }
-    }
-
-    public void addPropertyValue(Property propertyValue) {
-        properties.add(propertyValue);
     }
 }

@@ -27,17 +27,29 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="XML配置实现AOP方法拦截。">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="8ac26f20-be15-41ff-bf7b-c065d36ccd34" name="Default Changelist" comment="自动扫描bean注册+XML配置占位符功能发布。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/Properties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/Properties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/Center.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/Center.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/support/BeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/support/BeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/support/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/support/XmlBeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/aop/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/aop/ApiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/aop/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/bugstack/springframework/aop/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/annotation/ClassPathBeanDefinitionScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/annotation/ClassPathBeanDefinitionScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/annotation/ClassPathScanningCandidateComponentProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/annotation/ClassPathScanningCandidateComponentProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/context/support/AbstractApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/ConfigurableListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/ConfigurableListableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/PropertyPlaceholderConfigurator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/PropertyPlaceholderConfigurator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/InstantiationAwareBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/config/InstantiationAwareBeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/utils/ClassUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/utils/ClassUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/Properties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/Properties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/service/Center.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/service/Center.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/service/support/BeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/service/support/BeanDefinitionReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/service/support/XmlBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bugstack/springframework/beans/service/support/XmlBeanDefinitionReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/aop/ApiTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/aop/ApiTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/aop/ApiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/aop/ApiTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/aop/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/bugstack/springframework/aop/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +60,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -117,22 +129,7 @@
       <recent name="cn.bugstack.springframework.config" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApiTest.test_scan">
-    <configuration name="ApiTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LittleSpring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.bugstack.springframework.aop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.bugstack.springframework.aop" />
-      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.aop.ApiTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ApiTest.test_scan (1)">
     <configuration name="ApiTest.test_aop (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mySp" />
       <extension name="coverage">
@@ -181,6 +178,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApiTest.test_scan (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mySp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.bugstack.springframework.annotation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.bugstack.springframework.annotation" />
+      <option name="MAIN_CLASS_NAME" value="cn.bugstack.springframework.annotation.ApiTest" />
+      <option name="METHOD_NAME" value="test_scan" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiTest.test_scan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mySp" />
       <extension name="coverage">
@@ -199,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiTest.test_scan (1)" />
         <item itemvalue="JUnit.ApiTest.test_scan" />
         <item itemvalue="JUnit.ApiTest.test_beanPost" />
         <item itemvalue="JUnit.ApiTest.test_property" />
         <item itemvalue="JUnit.ApiTest.test_aop (1)" />
-        <item itemvalue="JUnit.ApiTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -410,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635779376613</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="自动扫描bean注册+XML配置占位符功能发布。">
+      <created>1635907304422</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1635907304422</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,7 +482,8 @@
     <MESSAGE value="观察者模式实现事件监听器发布，熟练掌握事件监听器和应用上下文的结合方式很重要（简简单单加个接口实现扩展）。" />
     <MESSAGE value="AOP核心原理，方法代理功能发布。" />
     <MESSAGE value="XML配置实现AOP方法拦截。" />
-    <option name="LAST_COMMIT_MESSAGE" value="XML配置实现AOP方法拦截。" />
+    <MESSAGE value="自动扫描bean注册+XML配置占位符功能发布。" />
+    <option name="LAST_COMMIT_MESSAGE" value="自动扫描bean注册+XML配置占位符功能发布。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -509,8 +530,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/service/Center.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="38" />
+          <line>30</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/DefaultListableBeanFactory.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/factory/support/AbstractBeanFactory.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/bugstack/springframework/beans/context/support/AbstractApplicationContext.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -19,7 +19,7 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
 
     @Override
     public void refresh(Map<String, BeanDefinition> beanDefinitionMap) {
-        //初始化容器->主要是定义注册BeanDefinition方法，对吗。
+        //初始化容器->主要是定义注册BeanDefinition方法
         refreshBeanFactory(beanDefinitionMap);
 
         //获取beanFactory
@@ -31,7 +31,7 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
         //invokeBeanFactoryPostProcessor
         invokeBeanFactoryPostProcessors(beanFactory);
 
-        //BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行注册操作
+        //BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行实例化
         registerBeanPostProcessors(beanFactory);
 
         //设置事件监听广播器
@@ -40,10 +40,11 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
         //注册事件监听器
         registerEventListener();
 
+        //getBean()入口
         //preInstantiateSingletons实例bean
         beanFactory.preInstantiateSingletons();
 
-        //结束Refresh事件发生
+        //call结束Refresh事件
         finishRefresh();
     }
 
@@ -70,7 +71,6 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
     abstract protected void refreshBeanFactory(Map<String, BeanDefinition> beanDefinitionMap);
     abstract public ConfigurableListableBeanFactory getBeanFactory();
 
-    //因为不是组合去解决这个调用问题，而是通过把BeanFactoryPostProcessor注册进去来解决
     private void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory){
         Map<String, BeanFactoryPostProcessor> beanFactoryPostProcessors = beanFactory.getBeansOfType(BeanFactoryPostProcessor.class);
         for(BeanFactoryPostProcessor beanFactoryPostProcessor: beanFactoryPostProcessors.values()){
@@ -117,5 +117,10 @@ public abstract class AbstractApplicationContext implements ConfigurableApplicat
     @Override
     public <T> T getBean(String name, Class<T> tClass) {
         return getBeanFactory().getBean(name, tClass);
+    }
+
+    @Override
+    public <T> T getBean(Class<T> requiredType){
+        return getBeanFactory().getBean(requiredType);
     }
 }

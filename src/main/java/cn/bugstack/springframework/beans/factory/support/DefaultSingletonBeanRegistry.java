@@ -21,17 +21,17 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
         singletonObject.put(name, singleObject);
     }
 
-    public <T> Map<String, T> getBeanObjectsOfType(Class<T> type){
-        Map<String, T> beanObjectsOfTypeT = new HashMap<>();
-        for(Map.Entry<String, Object> entry: singletonObject.entrySet()){
-            String beanName = entry.getKey();
-            Object beanObject = entry.getValue();
-            if(beanObject.getClass() == type){
-                beanObjectsOfTypeT.put(beanName, (T) beanObject);
-            }
-        }
-        return beanObjectsOfTypeT;
-    }
+//    public <T> Map<String, T> getBeanObjectsOfType(Class<T> type){
+//        Map<String, T> beanObjectsOfTypeT = new HashMap<>();
+//        for(Map.Entry<String, Object> entry: singletonObject.entrySet()){
+//            String beanName = entry.getKey();
+//            Object beanObject = entry.getValue();
+//            if(beanObject.getClass() == type){
+//                beanObjectsOfTypeT.put(beanName, (T) beanObject);
+//            }
+//        }
+//        return beanObjectsOfTypeT;
+//    }
 
     protected void registerDisposableBean(String beanName, DisposableBeanAdapter disposableBeanAdapter){
         disposableBeans.put(beanName, disposableBeanAdapter);

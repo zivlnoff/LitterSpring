@@ -1,6 +1,7 @@
 package cn.bugstack.springframework.beans.factory.support;
 
 import cn.bugstack.springframework.beans.BeansException;
+import cn.bugstack.springframework.beans.annotation.StringValueResolver;
 import cn.bugstack.springframework.beans.factory.BeanFactory;
 import cn.bugstack.springframework.beans.factory.FactoryBean;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
@@ -17,6 +18,8 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
     private ClassLoader classLoader = ClassUtils.getDefaultClassLoader();
 
     private List<BeanPostProcessor> beanPostProcessors = new ArrayList<>();
+
+    private final List<StringValueResolver> embeddedValueResolvers = new ArrayList<>();
 
     abstract protected Object createBean(String name, BeanDefinition beanDefinition);
 
@@ -58,5 +61,18 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 
     protected ClassLoader getBeanClassLoader(){
         return classLoader;
+    }
+
+    @Override
+    public void addEmbeddedValueResolver(StringValueResolver valueResolver) {
+        embeddedValueResolvers.add(valueResolver);
+    }
+
+    public String resolveEmbeddedValue(String value){
+        String result = value;
+        for(StringValueResolver stringValueResolver: this.embeddedValueResolvers){
+            result = stringValueResolver.resolveStringValue(result);
+        }
+        return result;
     }
 }

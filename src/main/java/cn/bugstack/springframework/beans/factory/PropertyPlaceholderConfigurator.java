@@ -3,6 +3,7 @@ package cn.bugstack.springframework.beans.factory;
 import cn.bugstack.springframework.beans.BeansException;
 import cn.bugstack.springframework.beans.Properties;
 import cn.bugstack.springframework.beans.Property;
+import cn.bugstack.springframework.beans.annotation.StringValueResolver;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import cn.bugstack.springframework.beans.factory.config.BeanPostProcessor;
@@ -56,13 +57,42 @@ public class PropertyPlaceholderConfigurator implements BeanFactoryPostProcessor
                     }
                 }
             }
+            StringValueResolver valueResolver = new PlaceholderResolvingStringValueResolver(properties);
+            beanFactory.addEmbeddedValueResolver(valueResolver);
         } catch (IOException e) {
             throw new BeansException("Could not load properties", e);
         }
+    }
+
+    private String resolvePlaceholder(String value, java.util.Properties properties) {
+        String strVal = value;
+        StringBuilder buffer = new StringBuilder(strVal);
+        int startIdx = strVal.indexOf(DEFAULT_PLACEHOLDER_PREFIX);
+        int stopIdx = strVal.indexOf(DEFAULT_PLACEHOLDER_SUFFIX);
+        if (startIdx != -1 && stopIdx != -1 && startIdx < stopIdx) {
+            String propKey = strVal.substring(startIdx + 2, stopIdx);
+            String propVal = properties.getProperty(propKey);
+            buffer.replace(startIdx, stopIdx + 1, propVal);
+        }
+        return buffer.toString();
     }
 
     public void setLocation(String location) {
         this.location = location;
     }
 
+    private class PlaceholderResolvingStringValueResolver implements StringValueResolver {
+
+        private final java.util.Properties properties;
+
+        public PlaceholderResolvingStringValueResolver(java.util.Properties properties) {
+            this.properties = properties;
+        }
+
+        @Override
+        public String resolveStringValue(String strVal) {
+            return PropertyPlaceholderConfigurator.this.resolvePlaceholder(strVal, properties);
+        }
+
+    }
 }

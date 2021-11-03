@@ -9,4 +9,5 @@ import java.util.List;
 public interface ConfigurableListableBeanFactory extends ConfigurableBeanFactory, AutowireCapableBeanFactory, ListableBeanFactory, BeanDefinitionRegistry {
     BeanDefinition getBeanDefinition(String name);
     void preInstantiateSingletons();
+
 }

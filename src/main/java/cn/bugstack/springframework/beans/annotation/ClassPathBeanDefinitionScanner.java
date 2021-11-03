@@ -1,5 +1,6 @@
 package cn.bugstack.springframework.beans.annotation;
 
+import cn.bugstack.springframework.beans.annotation.support.AutowiredAnnotationBeanPostProcessor;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.factory.support.BeanDefinitionRegistry;
 import cn.bugstack.springframework.stereotype.Component;
@@ -22,6 +23,8 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
                 map.put(determineBeanName(beanDefinition), beanDefinition);
             }
         }
+
+        map.put("cn.bugstack.springframework.context.annotation.internalAutowiredAnnotationProcessor", new BeanDefinition(AutowiredAnnotationBeanPostProcessor.class));
     }
 
     private String resolveBeanScope(BeanDefinition beanDefinition) {

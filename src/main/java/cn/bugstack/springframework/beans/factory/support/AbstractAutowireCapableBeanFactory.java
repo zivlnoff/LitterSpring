@@ -26,6 +26,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             //生成beanObject
             beanObject = createBeanObject(beanDefinition);
 
+            //在设置bean属性之前，提供注解自动扫描属性填充
+            applyBeanPostProcessorsBeforeApplyingPropertyValues(beanName, beanObject, beanDefinition);
+
             //properties注入
             beanPropertiesInjection(beanObject, beanName, beanDefinition);
 
@@ -44,6 +47,20 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         }
         return beanObject;
     }
+
+    protected void applyBeanPostProcessorsBeforeApplyingPropertyValues(String beanName, Object beanObject, BeanDefinition beanDefinition){
+        for(BeanPostProcessor beanPostProcessor: getBeanPostProcessors()){
+            if(beanPostProcessor instanceof InstantiationAwareBeanPostProcessor){
+                Properties properties = ((InstantiationAwareBeanPostProcessor) beanPostProcessor).postProcessPropertyValues(beanDefinition.getBeanDefinitionProperties(), beanObject, beanName);
+                if(null != properties){
+                    for(Property property: properties.getPropertiesList()){
+                        beanDefinition.getBeanDefinitionProperties().addPropertyValue(property);
+                    }
+                }
+            }
+
+        }
+    };
 
     protected Object resolveBeforeInstantiation(String beanName, BeanDefinition beanDefinition) {
         Object bean = applyBeanPostProcessorsBeforeInstantiation(beanDefinition.getBeanClass(), beanName);
@@ -103,7 +120,6 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         }
 
         //实例化前置操作
-        //为什么不直接在beanObject上进行修改
         Object wrappedBean = applyBeanPostProcessorBeforeInitialization(beanObject, beanName);
 
         //因为这里困扰了很久
