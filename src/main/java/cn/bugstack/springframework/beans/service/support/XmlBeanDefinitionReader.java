@@ -1,24 +1,30 @@
 package cn.bugstack.springframework.beans.service.support;
 
+import cn.bugstack.springframework.beans.BeansException;
+import cn.bugstack.springframework.beans.Property;
+import cn.bugstack.springframework.beans.annotation.ClassPathBeanDefinitionScanner;
 import cn.bugstack.springframework.beans.factory.config.BeanReference;
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
+import cn.bugstack.springframework.beans.factory.support.BeanDefinitionRegistry;
 import cn.bugstack.springframework.beans.resolver.config.Resource;
 import cn.bugstack.springframework.beans.resolver.service.ResourceLoader;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.XmlUtil;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.rmi.RemoteException;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 //book代码可以解决先注册后由第一次调用get时候生成单例对象
 //可以乱序注册bean
 
-import static java.rmi.registry.LocateRegistry.getRegistry;
 
 public class XmlBeanDefinitionReader implements BeanDefinitionReader {
     private ResourceLoader resourceLoader;
@@ -28,7 +34,8 @@ public class XmlBeanDefinitionReader implements BeanDefinitionReader {
     }
 
     @Override
-    public Map<String, BeanDefinition> resource2BeanDefinitions(String location) throws ClassNotFoundException {
+    public Map<String, BeanDefinition> resource2BeanDefinitions(String location) throws ClassNotFoundException, DocumentException {
+        SAXReader reader = new SAXReader();
         Resource resource = resourceLoader.getResource(location);
         InputStream inputStream = null;
         try {
@@ -36,25 +43,30 @@ public class XmlBeanDefinitionReader implements BeanDefinitionReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Document doc = XmlUtil.readXML(inputStream);
-        Element root = doc.getDocumentElement();
-        NodeList childNodes = root.getChildNodes();
+        Document document = reader.read(inputStream);
+        Element root = document.getRootElement();
 
         Map<String, BeanDefinition> producedBeanDefinition = new ConcurrentHashMap<>();
-        for (int i = 0; i < childNodes.getLength(); i++) {
-            // 判断元素
-            if (!(childNodes.item(i) instanceof Element)) continue;
-            // 判断对象
-            if (!"bean".equals(childNodes.item(i).getNodeName())) continue;
 
-            // 解析标签
-            Element bean = (Element) childNodes.item(i);
-            String id = bean.getAttribute("id");
-            String name = bean.getAttribute("name");
-            String className = bean.getAttribute("class");
-            String initMethod = bean.getAttribute("init-method");
-            String destroyMethodName = bean.getAttribute("destroy-method");
-            String beanScope = bean.getAttribute("scope");
+        // 解析 context:component-scan 标签，扫描包中的类并提取相关信息，用于组装 BeanDefinition
+        Element componentScan = root.element("component-scan");
+        if (null != componentScan) {
+            String scanPath = componentScan.attributeValue("base-package");
+            if (StrUtil.isEmpty(scanPath)) {
+                throw new BeansException("The value of base-package attribute can not be empty or null");
+            }
+            scanPackage(producedBeanDefinition, scanPath);
+        }
+
+        List<Element> beanList = root.elements("bean");
+        for (Element bean : beanList) {
+
+            String id = bean.attributeValue("id");
+            String name = bean.attributeValue("name");
+            String className = bean.attributeValue("class");
+            String initMethod = bean.attributeValue("init-method");
+            String destroyMethodName = bean.attributeValue("destroy-method");
+            String beanScope = bean.attributeValue("scope");
 
             // 获取 Class，方便获取类中的名称
             Class<?> clazz = Class.forName(className);
@@ -72,29 +84,29 @@ public class XmlBeanDefinitionReader implements BeanDefinitionReader {
             if (StrUtil.isNotEmpty(beanScope)) {
                 beanDefinition.setScope(beanScope);
             }
+
+            List<Element> propertyList = bean.elements("property");
             // 读取属性并填充
-            for (int j = 0; j < bean.getChildNodes().getLength(); j++) {
-                if (!(bean.getChildNodes().item(j) instanceof Element)) continue;
-                if (!"property".equals(bean.getChildNodes().item(j).getNodeName())) continue;
+            for (Element property : propertyList) {
                 // 解析标签：property
-                Element property = (Element) bean.getChildNodes().item(j);
-                String attrName = property.getAttribute("name");
-                String attrValue = property.getAttribute("value");
-                String attrRef = property.getAttribute("ref");
+                String attrName = property.attributeValue("name");
+                String attrValue = property.attributeValue("value");
+                String attrRef = property.attributeValue("ref");
                 // 获取属性值：引入对象、值对象
                 Object value = StrUtil.isNotEmpty(attrRef) ? new BeanReference(attrRef) : attrValue;
                 // 创建属性信息
-//                Property propertyValue = new Property(attrName, value);
-                beanDefinition.getBeanDefinitionProperties().addPropertyValue(attrName, value);
+                Property propertyValue = new Property(attrName, value);
+                beanDefinition.getBeanDefinitionProperties().addPropertyValue(propertyValue);
             }
 
             producedBeanDefinition.put(beanName, beanDefinition);
-//            if (getRegistry().containsBeanDefinition(beanName)) {
-//                throw new BeansException("Duplicate beanName[" + beanName + "] is not allowed");
-//            }
-//             //注册 BeanDefinition
-//            getRegistry().registerBeanDefinition(beanName, beanDefinition);
         }
         return producedBeanDefinition;
+    }
+
+    private void scanPackage(Map<String, BeanDefinition> map, String scanPath) {
+        String[] basePackages = StrUtil.splitToArray(scanPath, ',');
+        ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner();
+        scanner.doScan(map, basePackages);
     }
 }

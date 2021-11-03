@@ -1,8 +1,13 @@
 package cn.bugstack.springframework.aop;
 
+import cn.bugstack.springframework.stereotype.Component;
+
 import java.util.Random;
 
+@Component("userService")
 public class UserService implements IUserService{
+    private String token;
+
     public String queryUserInfo() {
         try {
             Thread.sleep(new Random(1).nextInt(100));
@@ -19,5 +24,17 @@ public class UserService implements IUserService{
             e.printStackTrace();
         }
         return "注册用户：" + userName + " success！";
+    }
+    @Override
+    public String toString() {
+        return "UserService#token = { " + token + " }";
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

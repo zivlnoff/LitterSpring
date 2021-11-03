@@ -40,4 +40,8 @@ public class Properties {
             }
         }
     }
+
+    public void addPropertyValue(Property propertyValue) {
+        properties.add(propertyValue);
+    }
 }

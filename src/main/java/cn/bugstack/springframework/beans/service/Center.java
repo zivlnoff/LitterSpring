@@ -4,6 +4,7 @@ import cn.bugstack.springframework.beans.context.support.AbstractRefreshableAppl
 import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 import cn.bugstack.springframework.beans.service.support.BeanDefinitionReader;
 import com.sun.tools.javac.util.Assert;
+import org.dom4j.DocumentException;
 
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class Center {
 
         try {
             producedBeanDefinition = beanDefinitionReader.resource2BeanDefinitions(location);
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException | DocumentException e) {
             e.printStackTrace();
         }
 

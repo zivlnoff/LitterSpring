@@ -6,11 +6,15 @@ import cn.bugstack.springframework.aop.framework.JdkDynamicAopProxy;
 import cn.bugstack.springframework.aop.framework.ProxyFactory;
 import cn.bugstack.springframework.aop.framework.ReflectiveMethodInvocation;
 import cn.bugstack.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor;
+import cn.bugstack.springframework.beans.BeansException;
 import cn.bugstack.springframework.beans.context.support.DefaultRefreshableApplicationContext;
+import cn.bugstack.springframework.beans.factory.config.BeanPostProcessor;
+import cn.bugstack.springframework.beans.factory.support.AbstractBeanFactory;
 import cn.bugstack.springframework.beans.factory.support.DefaultListableBeanFactory;
 import cn.bugstack.springframework.beans.resolver.service.DefaultResourceLoader;
 import cn.bugstack.springframework.beans.service.Center;
 import cn.bugstack.springframework.beans.service.support.XmlBeanDefinitionReader;
+import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +22,8 @@ import org.junit.Test;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApiTest {
     @Test
@@ -147,4 +153,42 @@ public class ApiTest {
         System.out.println("测试结果：" + userService.queryUserInfo());
     }
 
+    @Test
+    public void test_scan() {
+        Center center = new Center(new DefaultRefreshableApplicationContext(new DefaultListableBeanFactory()), new XmlBeanDefinitionReader(new DefaultResourceLoader()));
+        center.loadResource("classpath:spring-scan.xml");
+        IUserService userService = center.getRefreshableApplicationContext().getBean("userService", IUserService.class);
+        System.out.println("测试结果：" + userService.queryUserInfo());
+    }
+
+    @Test
+    public void test_property() {
+        Center center = new Center(new DefaultRefreshableApplicationContext(new DefaultListableBeanFactory()), new XmlBeanDefinitionReader(new DefaultResourceLoader()));
+        center.loadResource("classpath:spring-property.xml");
+        IUserService userService = center.getRefreshableApplicationContext().getBean("userService", IUserService.class);
+        System.out.println("测试结果：" + userService);
+    }
+
+    @Test
+    public void test_beanPost(){
+
+        BeanPostProcessor beanPostProcessor = new BeanPostProcessor() {
+            @Override
+            public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+                return null;
+            }
+
+            @Override
+            public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+                return null;
+            }
+        };
+
+        List<BeanPostProcessor> beanPostProcessors = new ArrayList<BeanPostProcessor>();
+        beanPostProcessors.add(beanPostProcessor);
+        beanPostProcessors.add(beanPostProcessor);
+        beanPostProcessors.remove(beanPostProcessor);
+
+        System.out.println(beanPostProcessors.size());
+    }
 }
