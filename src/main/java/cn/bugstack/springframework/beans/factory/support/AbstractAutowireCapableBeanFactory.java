@@ -17,12 +17,6 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     protected Object createBean(String beanName, BeanDefinition beanDefinition) throws BeansException {
         Object beanObject = null;
         try {
-            // 判断是否返回代理 Bean 对象
-            beanObject = resolveBeforeInstantiation(beanName, beanDefinition);
-            if (null != beanObject) {
-                return beanObject;
-            }
-
             //生成beanObject
             beanObject = createBeanObject(beanDefinition);
 
@@ -158,11 +152,12 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
     @Override
     public Object applyBeanPostProcessorAfterInitialization(Object wrappedBean, String beanName) {
+        Object result = wrappedBean;
         List<BeanPostProcessor> beanPostProcessors = getBeanPostProcessors();
         for (BeanPostProcessor beanPostProcessor : beanPostProcessors) {
-            beanPostProcessor.postProcessAfterInitialization(wrappedBean, beanName);
+            result = beanPostProcessor.postProcessAfterInitialization(wrappedBean, beanName);
         }
-        return wrappedBean;
+        return result;
     }
 
     protected void registerDisposableBeanIfNecessary(String beanName, Object bean, BeanDefinition beanDefinition) {
